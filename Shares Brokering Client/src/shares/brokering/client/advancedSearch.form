@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace pref="43" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="sectorFilterLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="sectorFilterBox" min="-2" pref="156" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="symbolFilterLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="nameFilterLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="symbolFilterBox" max="32767" attributes="0"/>
+                          <Component id="nameFilterBox" min="-2" pref="156" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+              <Component id="clearButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="moreInfoButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="TradeListPane" pref="539" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="261" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="symbolFilterBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="symbolFilterLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="nameFilterBox" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="nameFilterLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="sectorFilterBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="sectorFilterLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="moreInfoButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="clearButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="TradeListPane" min="-2" pref="244" max="-2" attributes="0"/>
+                  <EmptySpace pref="152" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="moreInfoButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="More Info"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="moreInfoButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="TradeListPane">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="TradeList">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="6" rowCount="0">
+                <Column editable="false" title="Symbol" type="java.lang.Object"/>
+                <Column editable="false" title="Name" type="java.lang.Object"/>
+                <Column editable="false" title="Sector" type="java.lang.Object"/>
+                <Column editable="false" title="Volume" type="java.lang.Integer"/>
+                <Column editable="false" title="Price" type="java.lang.Double"/>
+                <Column editable="true" title="Currency" type="java.lang.Object"/>
+              </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" postCode="JComboBox comboBox = new JComboBox&lt;&gt;(currencyCodes);&#xa;comboBox.addItemListener(new ItemListener() &#xa;{&#xa;    @Override&#xa;    public void itemStateChanged(ItemEvent e) &#xa;    {&#xa;        if(e.getStateChange() == ItemEvent.SELECTED) &#xa;        {&#xa;            try&#xa;            {&#xa;                String companySymbol = (String) TradeList.getValueAt(TradeList.getSelectedRow(), 0);&#xa;                int companyRow = findRowNumber(companySymbol);&#xa;                Company tempComp = companyList.get(companyRow);&#xa;&#xa;                String selectedCurrency = (String) comboBox.getSelectedItem();&#xa;                SharePrice newPrice = convertAmount(tempComp.getPrice(), selectedCurrency);&#xa;               &#xa;                System.out.println(tempComp.getPrice().getHighValue() + &quot; &quot;&#xa;                + tempComp.getPrice().getCloseValue());&#xa;                tempComp.setPrice(newPrice);&#xa;&#xa;                //loadContentToTable();&#xa;                int rowNumber = TradeList.getSelectedRow();&#xa;                if (TradeList.getRowSorter() != null)&#xa;                {&#xa;                    rowNumber = TradeList.getRowSorter().convertRowIndexToModel(rowNumber);&#xa;                }&#xa;                &#xa;                model.setValueAt(Math.floor(tempComp.getPrice().getValue() * 100) / 100, rowNumber, 4);&#xa;&#xa;                System.out.println(&quot;Test 5&quot;);&#xa;            } catch (Exception ex) &#xa;            {&#xa;                System.out.println(ex.toString());&#xa;            }&#xa;        }&#xa;    }&#xa;});&#xa;&#xa;TableColumn comboColumn = TradeList.getColumnModel().getColumn(5);&#xa;comboColumn.setCellEditor(new DefaultCellEditor(comboBox));">
+              <TableColumnModel selectionModel="3">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="columnSelectionAllowed" type="boolean" value="true"/>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="TradeList.setAutoCreateRowSorter(true);"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="clearButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Clear filters"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="nameFilterBox">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="nameFilterBox.getDocument().addDocumentListener(&#xa;new DocumentListener()&#xa;{&#xa;    @Override public void insertUpdate(DocumentEvent e) { filterTable(); }&#xa;    @Override public void removeUpdate(DocumentEvent e) { filterTable(); }&#xa;    @Override public void changedUpdate(DocumentEvent e) {}&#xa;});"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="nameFilterBox.setToolTipText(&quot;Name Filter&quot;);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="symbolFilterBox">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="symbolFilterBox.getDocument().addDocumentListener(&#xa;new DocumentListener()&#xa;{&#xa;    @Override public void insertUpdate(DocumentEvent e) { filterTable(); }&#xa;    @Override public void removeUpdate(DocumentEvent e) { filterTable(); }&#xa;    @Override public void changedUpdate(DocumentEvent e) {}&#xa;});"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="symbolFilterBox.setToolTipText(&quot;Symbol Filter&quot;);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="sectorFilterBox">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="sectorFilterBox.getDocument().addDocumentListener(&#xa;new DocumentListener()&#xa;{&#xa;    @Override public void insertUpdate(DocumentEvent e) { filterTable(); }&#xa;    @Override public void removeUpdate(DocumentEvent e) { filterTable(); }&#xa;    @Override public void changedUpdate(DocumentEvent e) {}&#xa;&#xa;});"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="sectorFilterBox.setToolTipText(&quot;sector Filter&quot;);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="symbolFilterLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Symbol filter:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="nameFilterLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Name filter:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="sectorFilterLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sector filter:"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

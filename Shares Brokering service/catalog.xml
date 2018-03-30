@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/H:/Programowanie/Year%203%20projects/Shares%20Brokering%20service/../JAXBIntro/src/Shows.xsd" uri="src/conf/xml-resources/jaxb/testBinding/Shows.xsd"/>
+    <system systemId="file:/H:/Programowanie/Year%203%20projects/Shares%20Brokering%20service/currentTrades.xsd" uri="src/conf/xml-resources/jaxb/currentTrades/currentTrades.xsd"/>
+    <system systemId="file:/H:/Programowanie/Year%203%20projects/Shares%20Brokering%20service/../JAXBIntro/xml-resources/jaxb/trades/currentTrades.xsd" uri="src/conf/xml-resources/jaxb/currentTrades/currentTrades.xsd"/>
+</catalog>

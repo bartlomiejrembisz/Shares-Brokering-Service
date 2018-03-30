@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xsd:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xsd:complexType name="share_price">
+        <xsd:sequence>
+            <xsd:element name="Currency" type="xsd:string"/>
+            <xsd:element name="Value" type="xsd:double"/>
+            <xsd:element name="OpenValue" type="xsd:double"/>
+            <xsd:element name="CloseValue" type="xsd:double"/>
+            <xsd:element name="HighValue" type="xsd:double"/>
+            <xsd:element name="LowValue" type="xsd:double"/>
+            <xsd:element name="lastUpdate" type="xsd:timestamp"/>
+        </xsd:sequence>
+    </xsd:complexType>
+	
+    <xsd:element name="Company">
+        <xsd:complexType>
+            <xsd:sequence >
+                <xsd:element name="Name" type="xsd:string"/>
+                <xsd:element name="Symbol" type="xsd:string"/>
+                <xsd:element name="Sector" type="xsd:string"/>
+                <xsd:element name="Volume" type="xsd:string"/>
+                <xsd:element name="movie_collection" type="tns:share_price" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+        
+</xsd:schema>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/testWebService/testWebService?wsdl" uri="xml-resources/web-service-references/testWebService/wsdl/localhost_8080/testWebService/testWebService.wsdl"/>
+    <system systemId="http://localhost:8080/testWebService/testWebService?xsd=1" uri="xml-resources/web-service-references/testWebService/wsdl/localhost_8080/testWebService/testWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/testWebService/testWebService?xsd=2" uri="xml-resources/web-service-references/testWebService/wsdl/localhost_8080/testWebService/testWebService.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/SharesBrokeringSystem/SharesBrokeringSystem?wsdl" uri="wsdl/localhost_8080/SharesBrokeringSystem/SharesBrokeringSystem.wsdl"/>
+    <system systemId="http://localhost:8080/SharesBrokeringSystem/SharesBrokeringSystem?xsd=1" uri="wsdl/localhost_8080/SharesBrokeringSystem/SharesBrokeringSystem.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SharesBrokeringSystem/SharesBrokeringSystem?xsd=2" uri="wsdl/localhost_8080/SharesBrokeringSystem/SharesBrokeringSystem.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/CurrencyConversion/CurrencyConversion?wsdl" uri="wsdl/localhost_8080/CurrencyConversion/CurrencyConversion.wsdl"/>
+    <system systemId="http://localhost:8080/CurrencyConversion/CurrencyConversion?xsd=1" uri="wsdl/localhost_8080/CurrencyConversion/CurrencyConversion.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/CurrencyConversion/CurrencyConversion?xsd=2" uri="wsdl/localhost_8080/CurrencyConversion/CurrencyConversion.xsd_2.xsd"/>
+</catalog>

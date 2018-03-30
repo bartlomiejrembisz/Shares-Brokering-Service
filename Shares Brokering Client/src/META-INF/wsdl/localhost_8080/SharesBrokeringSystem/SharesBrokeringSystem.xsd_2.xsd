@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://sharesbrokeringsystem.me.org/" xmlns:ns1="tradeList" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://sharesbrokeringsystem.me.org/">
+
+<xs:import namespace="tradeList" schemaLocation="http://localhost:8080/SharesBrokeringSystem/SharesBrokeringSystem?xsd=1"/>
+
+<xs:element name="CertificateException" type="tns:CertificateException"/>
+
+<xs:element name="buyShares" type="tns:buyShares"/>
+
+<xs:element name="companyList" type="tns:companyList"/>
+
+<xs:element name="companyListResponse" type="tns:companyListResponse"/>
+
+<xs:element name="depositAmount" type="tns:depositAmount"/>
+
+<xs:element name="depositAmountResponse" type="tns:depositAmountResponse"/>
+
+<xs:element name="getCompanies" type="tns:getCompanies"/>
+
+<xs:element name="getCompaniesResponse" type="tns:getCompaniesResponse"/>
+
+<xs:element name="logIn" type="tns:logIn"/>
+
+<xs:element name="logInResponse" type="tns:logInResponse"/>
+
+<xs:element name="logOut" type="tns:logOut"/>
+
+<xs:element name="logOutResponse" type="tns:logOutResponse"/>
+
+<xs:element name="moreCompanyInfo" type="tns:moreCompanyInfo"/>
+
+<xs:element name="moreCompanyInfoResponse" type="tns:moreCompanyInfoResponse"/>
+
+<xs:element name="sellShares" type="tns:sellShares"/>
+
+<xs:element name="signUp" type="tns:signUp"/>
+
+<xs:element name="signUpResponse" type="tns:signUpResponse"/>
+
+<xs:element name="updateCompanies" type="tns:updateCompanies"/>
+
+<xs:element name="updateCompaniesResponse" type="tns:updateCompaniesResponse"/>
+
+<xs:complexType name="moreCompanyInfo">
+<xs:sequence>
+<xs:element name="_company" type="ns1:Company" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="moreCompanyInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:Company" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CertificateException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="logIn">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="logInResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:Client" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="signUp">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="signUpResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="logOut">
+<xs:sequence>
+<xs:element name="client" type="ns1:Client" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="logOutResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buyShares">
+<xs:sequence>
+<xs:element name="client" type="ns1:Client" minOccurs="0"/>
+<xs:element name="company" type="ns1:Company" minOccurs="0"/>
+<xs:element name="volume" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="depositAmount">
+<xs:sequence>
+<xs:element name="client" type="ns1:Client" minOccurs="0"/>
+<xs:element name="amount" type="xs:double"/>
+<xs:element name="currency" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="depositAmountResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sellShares">
+<xs:sequence>
+<xs:element name="client" type="ns1:Client" minOccurs="0"/>
+<xs:element name="company" type="ns1:Company" minOccurs="0"/>
+<xs:element name="volume" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCompanies">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getCompaniesResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:Company" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="companyList">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="companyListResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:Company" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateCompanies">
+<xs:sequence>
+<xs:element name="_currentTrades" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="trade_list" type="ns1:Company" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateCompaniesResponse">
+<xs:sequence>
+<xs:element name="return" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="trade_list" type="ns1:Company" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

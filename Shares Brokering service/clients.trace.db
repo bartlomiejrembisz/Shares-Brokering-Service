@@ -1,0 +1,676 @@
+2018-01-25 01:14:15 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE([*]
+ID INT NOT NULL AUTO_INCREMENT,
+USERNAME VARCHAR(255) NOT NULL,
+PASSWORD VARCHAR(255) NOT NULL,
+BALANCE DOUBLE,
+PRIMARY KEY(ID)
+) "; expected "identifier"; SQL statement:
+CREATE TABLE(
+ID int NOT NULL AUTO_INCREMENT,
+username VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL,
+balance DOUBLE,
+PRIMARY KEY(ID)
+) [42001-196]
+2018-01-25 01:15:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-196]
+2018-01-25 01:15:08 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE([*]
+ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+USERNAME VARCHAR(255) NOT NULL,
+PASSWORD VARCHAR(255) NOT NULL,
+BALANCE DOUBLE
+) "; expected "identifier"; SQL statement:
+CREATE TABLE(
+ID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL,
+balance DOUBLE
+) [42001-196]
+2018-01-25 01:15:17 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE([*]
+ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+USERNAME VARCHAR(255) NOT NULL,
+PASSWORD VARCHAR(255) NOT NULL,
+BALANCE DOUBLE
+) "; expected "identifier"; SQL statement:
+CREATE TABLE(
+ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL,
+balance DOUBLE
+) [42001-196]
+2018-01-25 01:15:32 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE([*]
+I'D' INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+'username' VARCHAR(255) NOT NULL,
+'password' VARCHAR(255) NOT NULL,
+'balance' DOUBLE
+)"; expected "identifier"; SQL statement:
+CREATE TABLE(
+I'D' INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+'username' VARCHAR(255) NOT NULL,
+'password' VARCHAR(255) NOT NULL,
+'balance' DOUBLE
+) [42001-196]
+2018-01-25 01:15:34 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE([*]
+I'D' INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+'username' VARCHAR(255) NOT NULL,
+'password' VARCHAR(255) NOT NULL,
+'balance' DOUBLE
+)"; expected "identifier"; SQL statement:
+CREATE TABLE(
+I'D' INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+'username' VARCHAR(255) NOT NULL,
+'password' VARCHAR(255) NOT NULL,
+'balance' DOUBLE
+) [42001-196]
+2018-01-25 01:16:17 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Unknown data type: "'"; SQL statement:
+CREATE TABLE CLIENTS(
+I'D' INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+'username' VARCHAR(255) NOT NULL,
+'password' VARCHAR(255) NOT NULL,
+'balance' DOUBLE
+) [50004-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:4169)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:4012)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:6155)
+	at org.h2.command.Parser.parseCreate(Parser.java:4351)
+	at org.h2.command.Parser.parsePrepared(Parser.java:366)
+	at org.h2.command.Parser.parse(Parser.java:321)
+	at org.h2.command.Parser.parse(Parser.java:293)
+	at org.h2.command.Parser.prepareCommand(Parser.java:258)
+	at org.h2.engine.Session.prepareLocal(Session.java:578)
+	at org.h2.engine.Session.prepareCommand(Session.java:519)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:176)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2018-01-25 01:16:22 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE CLIENTS(
+'ID'[*] INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+'username' VARCHAR(255) NOT NULL,
+'password' VARCHAR(255) NOT NULL,
+'balance' DOUBLE
+)"; expected "identifier"; SQL statement:
+CREATE TABLE CLIENTS(
+'ID' INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+'username' VARCHAR(255) NOT NULL,
+'password' VARCHAR(255) NOT NULL,
+'balance' DOUBLE
+) [42001-196]
+2018-01-25 01:19:28 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ([*]
+ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+SYMBOL VARCHAR(5),
+CLIENTID INT NOT NULL,
+VOLUME VARCHAR(255)
+FOREIGN KEY (CLIENTID) REFERENCES CLIENTS(ID)
+) "; expected "identifier"; SQL statement:
+CREATE TABLE (
+ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+SYMBOL VARCHAR(5),
+clientID INT NOT NULL,
+VOLUME VARCHAR(255)
+foreign key (clientID) references CLIENTS(ID)
+) [42001-196]
+2018-01-25 01:19:39 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE CLIENTCOMPANYRELATION(
+ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+SYMBOL VARCHAR(5),
+CLIENTID INT NOT NULL,
+VOLUME VARCHAR(255)
+FOREIGN[*] KEY (CLIENTID) REFERENCES CLIENTS(ID)
+) "; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE ClientCompanyRelation(
+ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+SYMBOL VARCHAR(5),
+clientID INT NOT NULL,
+VOLUME VARCHAR(255)
+foreign key (clientID) references CLIENTS(ID)
+) [42001-196]
+2018-01-25 01:30:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "test" not found; SQL statement:
+INSERT INTO CLIENTS VALUES (NULL, "test", "test", 100) [42122-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.command.dml.Insert.prepare(Insert.java:270)
+	at org.h2.command.Parser.prepareCommand(Parser.java:263)
+	at org.h2.engine.Session.prepareLocal(Session.java:578)
+	at org.h2.engine.Session.prepareCommand(Session.java:519)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:176)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2018-01-25 01:31:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT FROM CLIENTS[*]"; expected "., (, USE, AS, RIGHT, LEFT, FULL, INNER, JOIN, CROSS, NATURAL, ,, SELECT"; SQL statement:
+SELECT FROM CLIENTS [42001-196]
+2018-01-25 01:44:57 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.me.sharesbrokeringsystem.SharesBrokeringSystem.signUp(SharesBrokeringSystem.java:284)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.runMethod(EJBSecurityManager.java:1081)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.invoke(EJBSecurityManager.java:1153)
+	at com.sun.ejb.containers.BaseContainer.invokeBeanMethod(BaseContainer.java:4786)
+	at com.sun.ejb.EjbInvocation.invokeBeanMethod(EjbInvocation.java:656)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:608)
+	at org.jboss.weld.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:73)
+	at org.jboss.weld.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:883)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:608)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:163)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.aroundInvoke(SystemInterceptorProxy.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:883)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:369)
+	at com.sun.ejb.containers.BaseContainer.__intercept(BaseContainer.java:4758)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:4746)
+	at com.sun.ejb.containers.WebServiceInvocationHandler.invoke(WebServiceInvocationHandler.java:193)
+	at com.sun.proxy.$Proxy1096.signUp(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.webservices.InvokerImpl.invoke(InvokerImpl.java:82)
+	at org.glassfish.webservices.EjbInvokerImpl.invoke(EjbInvokerImpl.java:82)
+	at com.sun.xml.ws.server.InvokerTube$2.invoke(InvokerTube.java:149)
+	at com.sun.xml.ws.server.sei.SEIInvokerTube.processRequest(SEIInvokerTube.java:88)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:1136)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:1050)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:1019)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:877)
+	at com.sun.xml.ws.api.pipe.helper.AbstractTubeImpl.process(AbstractTubeImpl.java:136)
+	at org.glassfish.webservices.MonitoringPipe.process(MonitoringPipe.java:142)
+	at com.sun.xml.ws.api.pipe.helper.PipeAdapter.processRequest(PipeAdapter.java:119)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:1136)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:1050)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:1019)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:877)
+	at com.sun.xml.ws.api.pipe.helper.AbstractTubeImpl.process(AbstractTubeImpl.java:136)
+	at com.sun.enterprise.security.webservices.CommonServerSecurityPipe.processRequest(CommonServerSecurityPipe.java:209)
+	at com.sun.enterprise.security.webservices.CommonServerSecurityPipe.process(CommonServerSecurityPipe.java:141)
+	at com.sun.xml.ws.api.pipe.helper.PipeAdapter.processRequest(PipeAdapter.java:119)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:1136)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:1050)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:1019)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:877)
+	at com.sun.xml.ws.server.WSEndpointImpl$2.process(WSEndpointImpl.java:419)
+	at com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit.handle(HttpAdapter.java:868)
+	at com.sun.xml.ws.transport.http.HttpAdapter.handle(HttpAdapter.java:422)
+	at com.sun.xml.ws.transport.http.servlet.ServletAdapter.handle(ServletAdapter.java:169)
+	at org.glassfish.webservices.Ejb3MessageDispatcher.handlePost(Ejb3MessageDispatcher.java:110)
+	at org.glassfish.webservices.Ejb3MessageDispatcher.invoke(Ejb3MessageDispatcher.java:80)
+	at org.glassfish.webservices.EjbWebServiceServlet.dispatchToEjbEndpoint(EjbWebServiceServlet.java:210)
+	at org.glassfish.webservices.EjbWebServiceServlet.service(EjbWebServiceServlet.java:153)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.glassfish.grizzly.servlet.ServletHandler.doServletService(ServletHandler.java:226)
+	at org.glassfish.grizzly.servlet.ServletHandler.service(ServletHandler.java:178)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:459)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:167)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:235)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:283)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:200)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:132)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:111)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:536)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:591)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:571)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 113 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 108 more
+2018-01-25 01:45:39 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.me.sharesbrokeringsystem.SharesBrokeringSystem.signUp(SharesBrokeringSystem.java:284)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.runMethod(EJBSecurityManager.java:1081)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.invoke(EJBSecurityManager.java:1153)
+	at com.sun.ejb.containers.BaseContainer.invokeBeanMethod(BaseContainer.java:4786)
+	at com.sun.ejb.EjbInvocation.invokeBeanMethod(EjbInvocation.java:656)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:608)
+	at org.jboss.weld.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:73)
+	at org.jboss.weld.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at sun.reflect.GeneratedMethodAccessor1054.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:883)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:608)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:163)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.aroundInvoke(SystemInterceptorProxy.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:883)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:369)
+	at com.sun.ejb.containers.BaseContainer.__intercept(BaseContainer.java:4758)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:4746)
+	at com.sun.ejb.containers.WebServiceInvocationHandler.invoke(WebServiceInvocationHandler.java:193)
+	at com.sun.proxy.$Proxy1101.signUp(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.webservices.InvokerImpl.invoke(InvokerImpl.java:82)
+	at org.glassfish.webservices.EjbInvokerImpl.invoke(EjbInvokerImpl.java:82)
+	at com.sun.xml.ws.server.InvokerTube$2.invoke(InvokerTube.java:149)
+	at com.sun.xml.ws.server.sei.SEIInvokerTube.processRequest(SEIInvokerTube.java:88)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:1136)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:1050)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:1019)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:877)
+	at com.sun.xml.ws.api.pipe.helper.AbstractTubeImpl.process(AbstractTubeImpl.java:136)
+	at org.glassfish.webservices.MonitoringPipe.process(MonitoringPipe.java:142)
+	at com.sun.xml.ws.api.pipe.helper.PipeAdapter.processRequest(PipeAdapter.java:119)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:1136)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:1050)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:1019)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:877)
+	at com.sun.xml.ws.api.pipe.helper.AbstractTubeImpl.process(AbstractTubeImpl.java:136)
+	at com.sun.enterprise.security.webservices.CommonServerSecurityPipe.processRequest(CommonServerSecurityPipe.java:209)
+	at com.sun.enterprise.security.webservices.CommonServerSecurityPipe.process(CommonServerSecurityPipe.java:141)
+	at com.sun.xml.ws.api.pipe.helper.PipeAdapter.processRequest(PipeAdapter.java:119)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:1136)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:1050)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:1019)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:877)
+	at com.sun.xml.ws.server.WSEndpointImpl$2.process(WSEndpointImpl.java:419)
+	at com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit.handle(HttpAdapter.java:868)
+	at com.sun.xml.ws.transport.http.HttpAdapter.handle(HttpAdapter.java:422)
+	at com.sun.xml.ws.transport.http.servlet.ServletAdapter.handle(ServletAdapter.java:169)
+	at org.glassfish.webservices.Ejb3MessageDispatcher.handlePost(Ejb3MessageDispatcher.java:110)
+	at org.glassfish.webservices.Ejb3MessageDispatcher.invoke(Ejb3MessageDispatcher.java:80)
+	at org.glassfish.webservices.EjbWebServiceServlet.dispatchToEjbEndpoint(EjbWebServiceServlet.java:210)
+	at org.glassfish.webservices.EjbWebServiceServlet.service(EjbWebServiceServlet.java:153)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.glassfish.grizzly.servlet.ServletHandler.doServletService(ServletHandler.java:226)
+	at org.glassfish.grizzly.servlet.ServletHandler.service(ServletHandler.java:178)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:459)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:167)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:235)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:283)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:200)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:132)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:111)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:536)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:591)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:571)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 112 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:168)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 107 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at sun.nio.ch.SharedFileLockTable.checkList(FileLockTable.java:255)
+	at sun.nio.ch.SharedFileLockTable.add(FileLockTable.java:152)
+	at sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1108)
+	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
+	at java.nio.channels.FileChannel.tryLock(FileChannel.java:1155)
+	at org.h2.mvstore.FileStore.open(FileStore.java:165)
+	... 108 more
+2018-01-25 01:46:38 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 28 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 23 more
+2018-01-25 01:46:41 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.test(WebApp.java:885)
+	at org.h2.server.web.WebApp.process(WebApp.java:220)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 28 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 23 more
+2018-01-25 01:46:52 database: could not close the database
+java.lang.IllegalStateException: This web container has not yet been started
+	at org.glassfish.web.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1674)
+	at org.glassfish.web.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1633)
+	at org.h2.mvstore.MVMap.entrySet(MVMap.java:870)
+	at org.h2.store.LobStorageMap.removeAllForTable(LobStorageMap.java:314)
+	at org.h2.engine.Database.removeOrphanedLobs(Database.java:1340)
+	at org.h2.engine.Database.close(Database.java:1261)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:63)
+2018-01-25 01:54:26 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.me.sharesbrokeringsystem.SharesBrokeringSystem.signUp(SharesBrokeringSystem.java:284)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.runMethod(EJBSecurityManager.java:1081)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.invoke(EJBSecurityManager.java:1153)
+	at com.sun.ejb.containers.BaseContainer.invokeBeanMethod(BaseContainer.java:4786)
+	at com.sun.ejb.EjbInvocation.invokeBeanMethod(EjbInvocation.java:656)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:608)
+	at org.jboss.weld.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:73)
+	at org.jboss.weld.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:883)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:608)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:163)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.aroundInvoke(SystemInterceptorProxy.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:883)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:369)
+	at com.sun.ejb.containers.BaseContainer.__intercept(BaseContainer.java:4758)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:4746)
+	at com.sun.ejb.containers.WebServiceInvocationHandler.invoke(WebServiceInvocationHandler.java:193)
+	at com.sun.proxy.$Proxy267.signUp(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.webservices.InvokerImpl.invoke(InvokerImpl.java:82)
+	at org.glassfish.webservices.EjbInvokerImpl.invoke(EjbInvokerImpl.java:82)
+	at com.sun.xml.ws.server.InvokerTube$2.invoke(InvokerTube.java:149)
+	at com.sun.xml.ws.server.sei.SEIInvokerTube.processRequest(SEIInvokerTube.java:88)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:1136)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:1050)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:1019)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:877)
+	at com.sun.xml.ws.api.pipe.helper.AbstractTubeImpl.process(AbstractTubeImpl.java:136)
+	at org.glassfish.webservices.MonitoringPipe.process(MonitoringPipe.java:142)
+	at com.sun.xml.ws.api.pipe.helper.PipeAdapter.processRequest(PipeAdapter.java:119)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:1136)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:1050)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:1019)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:877)
+	at com.sun.xml.ws.api.pipe.helper.AbstractTubeImpl.process(AbstractTubeImpl.java:136)
+	at com.sun.enterprise.security.webservices.CommonServerSecurityPipe.processRequest(CommonServerSecurityPipe.java:209)
+	at com.sun.enterprise.security.webservices.CommonServerSecurityPipe.process(CommonServerSecurityPipe.java:141)
+	at com.sun.xml.ws.api.pipe.helper.PipeAdapter.processRequest(PipeAdapter.java:119)
+	at com.sun.xml.ws.api.pipe.Fiber.__doRun(Fiber.java:1136)
+	at com.sun.xml.ws.api.pipe.Fiber._doRun(Fiber.java:1050)
+	at com.sun.xml.ws.api.pipe.Fiber.doRun(Fiber.java:1019)
+	at com.sun.xml.ws.api.pipe.Fiber.runSync(Fiber.java:877)
+	at com.sun.xml.ws.server.WSEndpointImpl$2.process(WSEndpointImpl.java:419)
+	at com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit.handle(HttpAdapter.java:868)
+	at com.sun.xml.ws.transport.http.HttpAdapter.handle(HttpAdapter.java:422)
+	at com.sun.xml.ws.transport.http.servlet.ServletAdapter.handle(ServletAdapter.java:169)
+	at org.glassfish.webservices.Ejb3MessageDispatcher.handlePost(Ejb3MessageDispatcher.java:110)
+	at org.glassfish.webservices.Ejb3MessageDispatcher.invoke(Ejb3MessageDispatcher.java:80)
+	at org.glassfish.webservices.EjbWebServiceServlet.dispatchToEjbEndpoint(EjbWebServiceServlet.java:210)
+	at org.glassfish.webservices.EjbWebServiceServlet.service(EjbWebServiceServlet.java:153)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.glassfish.grizzly.servlet.ServletHandler.doServletService(ServletHandler.java:226)
+	at org.glassfish.grizzly.servlet.ServletHandler.service(ServletHandler.java:178)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:459)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:167)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:235)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:283)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:200)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:132)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:111)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:536)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:591)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:571)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 113 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 108 more
+2018-01-25 01:56:22 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.test(WebApp.java:885)
+	at org.h2.server.web.WebApp.process(WebApp.java:220)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 28 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:H:/Programowanie/Year 3 projects/Shares Brokering service/clients.mv.db [1.4.196/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 23 more
+2018-01-25 01:56:35 database: could not close the database
+java.lang.IllegalStateException: This web container has not yet been started
+	at org.glassfish.web.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1674)
+	at org.glassfish.web.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1633)
+	at org.h2.mvstore.MVMap.entrySet(MVMap.java:870)
+	at org.h2.store.LobStorageMap.removeAllForTable(LobStorageMap.java:314)
+	at org.h2.engine.Database.removeOrphanedLobs(Database.java:1340)
+	at org.h2.engine.Database.close(Database.java:1261)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:63)
