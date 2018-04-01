@@ -3,11 +3,11 @@ Shares Brokering Service simulation utilizing a currency conversion system using
 
 Build using Java SOAP Web Services
 
-**Dependencies:** 
+## Dependencies:
 - H2 Embedded SQL Database
 - json.org JSON parsing library
 
-**Usage:**  
+## Usage:
 - Start the server
 - Connect with the client
 - Register
