@@ -5,6 +5,7 @@ Build using Java SOAP Web Services
 
 **Dependencies:** 
 - H2 Embedded SQL Database
+- json.org JSON parsing library
 
 **Usage:**  
 - Start the server
