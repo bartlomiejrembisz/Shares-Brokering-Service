@@ -12,6 +12,6 @@ Build using Java SOAP Web Services
 - Register
 - Log in
 
-User Interface screenshot
+User Interface screenshot:
 
 ![User Interface](ScreenShots/UI.png)
