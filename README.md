@@ -6,7 +6,7 @@ Build using Java SOAP Web Services
 **Dependencies:** 
 - H2 Embedded SQL Database
 
-**Usage: **
+**Usage:**  
 - Start the server
 - Connect with the client
 - Register
